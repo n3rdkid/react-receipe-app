@@ -2,21 +2,31 @@ import React from 'react';
 import Form from './components/Form';
 import './App.css';
 
+const API_KEY= "3802bfaa34f96e8aefaecb983e61ca18";
 class App extends React.Component {
-
-  getReceipe=(event)=>{
+  state={
+    recipes:[]
+  }
+   getRecipes= async (event)=>{
     event.preventDefault();
-    const receipeName = event.target.elements.receipeName.value;
-    console.log(receipeName);
+    const recipeName = event.target.elements.recipeName.value;
+    const api_call = await 
+    fetch(`https://www.food2fork.com/api/search?key=${API_KEY}`)
+    const data=await api_call.json();
+    this.setState({recipes:data.recipes});
+    console.log(this.state.recipes)
   }
 
   render(){
     return (
         <div className="App">
           <header className="App-header">
-          <h1>Receipe Search</h1>
+          <h1>Recipes Search</h1>
           </header>
-          <Form getReceipe={this.getReceipe}/>
+          <Form getRecipes={this.getRecipes}/>
+          {
+            this.state.recipes.map(recipe=> <p>{recipe.title}</p>)
+          }
         </div>
       );
     }
