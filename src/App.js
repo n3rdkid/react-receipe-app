@@ -25,7 +25,7 @@ class App extends React.Component {
           </header>
           <Form getRecipes={this.getRecipes}/>
           {
-            this.state.recipes.map(recipe=> <p>{recipe.title}</p>)
+            this.state.recipes.map(recipe=> <p key={recipe.id}>{recipe.title}</p>)
           }
         </div>
       );
