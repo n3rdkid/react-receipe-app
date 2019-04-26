@@ -1,0 +1,20 @@
+.form{
+    margin-bottom:2rem;
+}
+.form__label{
+    border-radius:6px;
+    margin-right:10px;
+    color:orange;
+    padding:6px 16px;
+}
+.button__search{
+    background:transparent;
+    outline:none;
+    color:white;
+    border-radius:4px;
+    border:white 1px solid;
+    padding:6px 16px;
+}
+.button__search:focus{
+    outline:none;
+}

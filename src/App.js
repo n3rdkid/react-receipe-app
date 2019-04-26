@@ -14,18 +14,29 @@ class App extends React.Component {
     const api_call = await 
     fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}`)
     const data=await api_call.json();
+    if(data.error)
+    {
+      this.setState({recipes:Array(10).fill({recipe_id: "1",
+      image_url:"https://picsum.photos/300/300",
+      title:"Sorry API Max Call reached",
+      publisher:"Saurav Adhikari"})
+    })
+    }
+    else
     this.setState({recipes:data.recipes});
     console.log(this.state.recipes)
   }
 
   render(){
     return (
-        <div className="App">
+        <div className="container">
           <header className="App-header">
-          <h1>Recipes Search</h1>
+           <h1 className="App__title">Recipes Search</h1>  
+           <Form getRecipes={this.getRecipes}/>
           </header>
-          <Form getRecipes={this.getRecipes}/>
+        <div className="container">
           <Recipes recipes={this.state.recipes}/>
+        </div>
         </div>
       );
     }
