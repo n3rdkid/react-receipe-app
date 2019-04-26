@@ -29,14 +29,17 @@ class App extends React.Component {
 
   render(){
     return (
-        <div className="container">
-          <header className="App-header">
+        <div className="container-fluid">
+          <div className="row">
+          <header className="App-header w-100">
            <h1 className="App__title">Recipes Search</h1>  
            <Form getRecipes={this.getRecipes}/>
           </header>
-        <div className="container">
-          <Recipes recipes={this.state.recipes}/>
-        </div>
+          </div>
+            <div className="container">
+              <Recipes recipes={this.state.recipes}/>
+            </div>
+
         </div>
       );
     }
