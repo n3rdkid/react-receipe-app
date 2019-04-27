@@ -36,9 +36,9 @@ class App extends React.Component {
            <Form getRecipes={this.getRecipes}/>
           </header>
           </div>
-            <div className="container">
+          <div className="container"> 
               <Recipes recipes={this.state.recipes}/>
-            </div>
+           </div>
 
         </div>
       );

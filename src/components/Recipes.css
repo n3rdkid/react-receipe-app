@@ -1,8 +1,14 @@
-/* .recipe__card{
-    max-width: 300px;
-    max-height:300px;
-} */
-.recipe___image{
-    max-width:250px;
-    max-height:250px;
+.recipe___card {
+    margin-top:1rem;
+}
+.recipe__button{
+    background:white;
+    outline:none;
+    color: #f16821;;
+    border-radius:4px;
+    border:738598 1px solid;
+    padding:6px 16px;
+}
+.recipe__button:focus{
+    outline:none;
 }
