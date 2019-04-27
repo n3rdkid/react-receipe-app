@@ -16,7 +16,7 @@ const Recipes = (props)=>(
                         <p className="recipe__subtitle card-text">{recipe.publisher}</p>
                         <button className="recipe__button">
                         <Link to={{pathname:`/recipe/${recipe.recipe_id}`,
-                        state:{recipe:recipe.recipe_title}
+                        state:{recipe:recipe.title}
                         }}> View Recipe </Link>
                      </button>
                      </div>

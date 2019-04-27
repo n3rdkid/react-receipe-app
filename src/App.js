@@ -325,6 +325,14 @@ class App extends React.Component {
     else
     this.setState({recipes:data.recipes});
   }
+  componentDidMount=()=>{
+    const recipes=JSON.parse(localStorage.getItem("recipes"));
+    this.setState({recipes});
+  }
+  componentDidUpdate=()=>{
+    const recipes= JSON.stringify(this.state.recipes);
+    localStorage.setItem("recipes",recipes);
+  }
 
   render(){
     return (
